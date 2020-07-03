@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class EnterRightNumber {
     public static void main(String[] args) {
-        System.out.println("Please get my number from 1 to 100 ");
+        System.out.println("Please guess my number from 1 to 100 ");
 
 //       Create a random number which is the number players have to guess
         int min = 1;
@@ -11,21 +11,20 @@ public class EnterRightNumber {
         Random randomNumber = new Random();
         int value = min + randomNumber.nextInt(max);
 
-//        Create an object to store player inputs
+//      Create an object to store player inputs
         Scanner input = new Scanner(System.in);
 
-        boolean playerState = false;
         System.out.println("Enter your name:");
         String playerName = input.nextLine();
 
         while (playerName == null || playerName.isEmpty()) {
             System.out.println("You have to enter your name to start the game");
             System.out.println("Enter your name:");
-            String playerNameAGain = input.nextLine();
-             playerName = playerNameAGain;
-           }
+            String playerNameAttempt = input.nextLine();
+            playerName = playerNameAttempt;
+        }
 
-       if (playerName != null && !playerName.isEmpty()) {
+        if (playerName != null && !playerName.isEmpty()) {
             System.out.println("Game start");
             int attemptCount = 1;
             while (attemptCount > 0) {
